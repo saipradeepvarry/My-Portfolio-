@@ -366,6 +366,10 @@ main {
     margin-top: 15px;
 }
 
+/* about section
+
+*/
+
 #about .about-col {
     display: flex;
     gap: 20px;
@@ -822,121 +826,227 @@ main {
     }
 }
 
-
-
-
 /* contaact section start */
+/* Contact Section Styles */
 #contact {
     padding: 70px 30px;
+    background-color: #f9f9f9;
+}
+
+#contact .divider7 {
+    width: 60px;
+    height: 5px;
+    background-color: var(--themeColor);
+    margin: 10px auto;
+    animation: grow 1.2s ease-in-out;
 }
 
 #contact .contact-row {
-    margin-top: 50px;
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
-    width: 100%;
+    margin-top: 50px;
 }
 
-#contact .contact-row .contact-left {
-    flex-basis: 40%;
-    min-width: 100%;
-    background-color: white;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 20%);
-    border-radius: 4px;
+#contact .contact-left,
+#contact .contact-right {
+    flex: 1;
+    background: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
     padding: 30px;
+    animation: fadeInUp 1s ease;
 }
 
-#contact .contact-row .contact-left .icon-box {
+#contact .icon-box {
     display: flex;
     gap: 15px;
     align-items: center;
-    margin: 30px 0;
+    margin: 20px 0;
 }
 
-#contact .contact-row .contact-left .icon-box .icon i {
+#contact .icon-box .icon i {
     width: 50px;
     height: 50px;
     border-radius: 50%;
     border: 2px solid var(--themeColor);
-    text-align: center;
-    line-height: 47px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 20px;
     color: var(--themeColor);
-    transition: 0.5s;
+    transition: 0.3s ease;
 }
 
-#contact .contact-row .contact-left .icon-box:hover .icon i {
+#contact .icon-box:hover .icon i {
     background-color: var(--themeColor);
-    color: var(--bgColor);
+    color: white;
 }
 
-#contact .contact-row .contact-left .icon-box .info h4 {
+#contact .icon-box .info h4 {
     font-size: 20px;
-    color: var(--sideBGColor);
     font-weight: 600;
+    color: var(--sideBGColor);
 }
 
-#contact .contact-row .contact-left .icon-box .info h4+p {
+#contact .icon-box .info p a {
     color: var(--textColor);
-    font-size: 15px;
-    font-weight: 500;
+    font-size: 16px;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-#contact .contact-row .contact-right {
-    flex-basis: 60%;
-    min-width: 60%;
-    background-color: white;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 20%);
-    border-radius: 4px;
-    padding: 30px;
+#contact .icon-box .info p a:hover {
+    color: var(--themeColor);
+}
+#contact .sub-heading {
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--themeColor); /* Ensure this matches your theme */
+    text-align: center;
+    position: relative;
+    margin-bottom: 20px;
 }
 
-#contact .contact-row .contact-right form input,
-#contact .contact-row .contact-right form textarea {
+#contact .sub-heading::after {
+    content: "";
     display: block;
-    width: 100%;
-    margin: 25px 0;
-    font-size: 15px;
-    font-weight: 500;
-    color: var(--textColor);
-    padding: 10px 20px;
-    border: 2px solid lightgray;
-    border-radius: 2px;
-    outline: none;
-    resize: none;
-    transition: 0.5s;
+    width: 60px;
+    height: 5px;
+    background-color: orange;
+    margin: 10px auto 0;
+    border-radius: 3px;
+    animation: grow 1.2s ease-in-out;
 }
-
-#contact .contact-row .contact-right form input:focus,
-#contact .contact-row .contact-right form textarea:focus {
+#contact .icon-box .icon i.fa-instagram {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
     border: 2px solid var(--themeColor);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: var(--themeColor);
+    transition: 0.3s ease;
 }
 
-#contact .contact-row .contact-right form input[type=submit] {
+#contact .icon-box:hover .icon i.fa-instagram {
     background-color: var(--themeColor);
-    color: var(--bgColor);
-    border: 2px solid var(--themeColor);
-    font-size: 17px;
-    font-weight: 400;
-    cursor: pointer;
+    color: white;
 }
 
-@media only screen and (max-width: 800px) {
-    #contact {
-        padding: 50px;
-    }
+#contact .icon-box .info h4 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--sideBGColor);
+}
 
+#contact .icon-box .info p a {
+    color: var(--textColor);
+    font-size: 16px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#contact .icon-box .info p a:hover {
+    color: var(--themeColor);
+}
+
+
+/* Animations */
+@keyframes grow {
+    from {
+        width: 0;
+    }
+    to {
+        width: 60px;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 800px) {
     #contact .contact-row {
         flex-direction: column;
-        gap: 10px;
     }
 }
 
-@media only screen and (max-width: 500px) {
-    #contact {
-        padding: 50px 10px;
-    }
-
+/* scroll */
+/* Scroll Buttons Styling */
+#scroll-buttons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 1000;
+    animation: fadeIn 1s ease-in-out;
 }
 
-/* contact section end */
+#scroll-buttons button {
+    background-color:transparent;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, background-color 0.3s, opacity 0.3s ease-in-out;
+    font-size: 22px;
+    font-weight: bold;
+    opacity: 0.9;
+}
+
+#scroll-buttons button:hover {
+    background-color: transparent;
+    transform: scale(1.2) rotate(360deg);
+    opacity: 1;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Progress Bar Styling */
+#progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 5px;
+    background-color:orangered;
+    z-index: 1000;
+    transition: width 0.3s ease-in-out;
+}
+
+/* Fade-in Animation for Buttons */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Smooth Scroll Progress Bar */
+#progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 5px;
+    background:orangered;
+    transition: width 0.3s ease;
+}
